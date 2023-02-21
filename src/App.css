@@ -37,6 +37,20 @@
 
 .roll-btn{
   height: 80px;
-  width: 100px;
+  width: 120px;
+  border: none;
+  background-color:#719dff;
+  font-size: 2rem;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.roll-btn:focus {
+  outline: none;
+}
+
+.roll-btn:active {
+  box-shadow: insert 5px 5px 10px -3px rgba(0, 0, 0, 5.7);
 }
 
