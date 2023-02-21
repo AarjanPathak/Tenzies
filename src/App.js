@@ -11,7 +11,7 @@ const App = () =>{
   function newDice(){
     const dice=[]
     for(let i=0;i<10;i++){
-      dice.push(Math.ceil(Math.random()*6))
+      dice.push({number: Math.ceil(Math.random()*6), isActive: true})
     }
     return dice
   }
@@ -20,12 +20,16 @@ const App = () =>{
     setDieNumbers(newDice())
   }
 
+  const diceElements = dieNumbers.map((die) => {
+    return <Die value = {die.number} isActive = {die.isActive} />
+  })
+
   return(
     <div className="container">
       <main className="main">
-        <Die 
-          value = {dieNumbers}
-        />
+        <div className='dice-container'>
+          {diceElements}
+        </div>
         <button onClick={rollDice} className="roll-btn">Roll</button>
       </main>
     </div>
