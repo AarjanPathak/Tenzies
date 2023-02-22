@@ -2,11 +2,11 @@
 const Die = (props) => {
 
     const styles = {
-        backgroundColor: props.isActive? "#59E391":"whtite"
+        backgroundColor: props.isActive? "#59E391":"white"
     }
-
+    
     return(
-        <div className="die" style={styles}>
+        <div onClick = {props.activeDice} className="die" style={styles}>
             <h2>{props.value}</h2>
         </div>
     )
