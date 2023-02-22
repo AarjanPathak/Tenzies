@@ -6,6 +6,7 @@ import {nanoid} from "nanoid"
 
 const App = () =>{
 
+  const[tenzies, setTenzies] = React.useState(false)
   const[dieNumbers, setDieNumbers] = React.useState(newDice())
 
   function generateNewDie(){
@@ -33,6 +34,10 @@ const App = () =>{
     }))
   }
 
+  React.useEffect(()=>{
+    console.log("Dice state changed!")
+  }, [dieNumbers])
+
   const diceElements = dieNumbers.map((die) => {
     return <Die value = {die.number} isActive = {die.isActive} activeDice = {() => activeDice(die.id)}/>
   })
@@ -40,6 +45,8 @@ const App = () =>{
   return(
     <div className="container">
       <main className="main">
+        <h1 className='title'>Tenzies</h1>
+        <p className='game-info'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls </p>
         <div className='dice-container'>
           {diceElements}
         </div>

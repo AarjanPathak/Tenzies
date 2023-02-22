@@ -21,6 +21,7 @@
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
   gap: 3em;
+  margin-bottom: 30px;
 }
 
 
@@ -47,6 +48,7 @@
   color: white;
   border-radius: 20px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .roll-btn:focus {
@@ -55,5 +57,20 @@
 
 .roll-btn:active {
   box-shadow: insert 5px 5px 10px -3px rgba(0, 0, 0, 5.7);
+}
+
+.game-info{
+  font-size: 1.6rem;
+  text-align: center; 
+  margin-right: 50px;
+  margin-left: 50px;
+  font-family: 'Shantell Sans', cursive;
+  font-weight: bold;
+}
+
+.title{
+  margin-bottom: -5px;
+  font-family: 'Shantell Sans', cursive;
+  font-size: 2.3rem;
 }
 
