@@ -6,7 +6,7 @@ import Confetti from "react-confetti"
 
 
 const App = () =>{
-
+  const[rollsNumber, setRollsNumber] = React.useState(0)
   const[tenzies, setTenzies] = React.useState(false)
   const[dieNumbers, setDieNumbers] = React.useState(newDice())
 
@@ -28,12 +28,16 @@ const App = () =>{
       setDieNumbers(oldDice=>oldDice.map(die => {
         return die.isActive ? die : generateNewDie()
       }))
+      setRollsNumber(prevNumber=>prevNumber+1)
     }
     else{
       setTenzies(false)
       setDieNumbers(newDice())
+      setRollsNumber(0)
     }
   }
+
+  console.log(rollsNumber);
 
   function activeDice(id){
     setDieNumbers(oldDice => oldDice.map(die => {
@@ -57,6 +61,7 @@ const App = () =>{
 
   return(
     <div className="container">
+       <h2 className='rolls-number'>Total Dice Rolls : {rollsNumber}</h2>
       <main className="main">
         {tenzies && <Confetti />}
         <h1 className='title'>Tenzies</h1>
