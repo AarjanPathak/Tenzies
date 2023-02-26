@@ -61,9 +61,9 @@ const App = () =>{
 
   return(
     <div className="container">
+       {tenzies && <Confetti />}
        <h2 className='rolls-number'>Total Dice Rolls : {rollsNumber}</h2>
       <main className="main">
-        {tenzies && <Confetti />}
         <h1 className='title'>Tenzies</h1>
         <p className='game-info'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls </p>
         <div className='dice-container'>
